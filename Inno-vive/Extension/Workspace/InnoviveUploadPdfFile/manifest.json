@@ -1,0 +1,75 @@
+{
+    "name": "InnoviveUploadPdfFile",
+    "fantasyName": "InnoviveUploadPdfFile",
+    "vendor": "Devma",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": "",
+        "SCS": ""
+    },
+    "version": "1.0.0",
+    "description": "Extension for upload pdf file",
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/InnoviveUploadPdfFile.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/InnoviveUploadPdfFile/Configuration/InnoviveUploadPdfFile.json"
+        ]
+    },
+    "templates": {
+        "application": {
+            "checkout": {
+                "files": [
+                    "Modules/InnoviveUploadPdfFile/Templates/devma_innoviveuploadpdffile_innoviveuploadpdffile.tpl"
+                ]
+            }
+        }
+    },
+    "sass": {
+        "entry_points": {
+            "checkout": "Modules/InnoviveUploadPdfFile/Sass/_innoviveuploadpdffile-innoviveuploadpdffile.scss"
+        },
+        "files": [
+            "Modules/InnoviveUploadPdfFile/Sass/_innoviveuploadpdffile-innoviveuploadpdffile.scss"
+        ]
+    },
+    "javascript": {
+        "entry_points": {
+            "checkout": "Modules/InnoviveUploadPdfFile/JavaScript/Devma.InnoviveUploadPdfFile.InnoviveUploadPdfFile.js"
+        },
+        "application": {
+            "checkout": {
+                "files": [
+                    "Modules/InnoviveUploadPdfFile/JavaScript/Devma.InnoviveUploadPdfFile.InnoviveUploadPdfFile.js",
+                    "Modules/InnoviveUploadPdfFile/JavaScript/InnoviveUploadPdfFile.View.js",
+                    "Modules/InnoviveUploadPdfFile/JavaScript/Devma.InnoviveUploadPdfFile.InnoviveUploadPdfFile.Model.js",
+                    "Modules/InnoviveUploadPdfFile/JavaScript/Devma.InnoviveUploadPdfFile.InnoviveUploadPdfFile.SS2Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/InnoviveUploadPdfFile/SuiteScript/Devma.InnoviveUploadPdfFile.InnoviveUploadPdfFile.js",
+        "files": [
+            "Modules/InnoviveUploadPdfFile/SuiteScript/Devma.InnoviveUploadPdfFile.InnoviveUploadPdfFile.js",
+            "Modules/InnoviveUploadPdfFile/SuiteScript/InnoviveUploadPdfFile.ServiceController.js"
+        ]
+    },
+    "suitescript2": {
+        "files": [
+            "Modules/InnoviveUploadPdfFile/SuiteScript2/InnoviveUploadPdfFile.Service.ss"
+        ]
+    }
+}

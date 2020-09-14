@@ -1,0 +1,107 @@
+{
+    "name": "InnoviveItemQuantityPerBox",
+    "fantasyName": "Innovive Item Quantity Per Box",
+    "vendor": "Devma",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=20.1.0",
+        "SCS": ">=20.1.0"
+    },
+    "description": "This extension updates the selected quantity of the item per box.",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/InnoviveItemQuantityPerBox.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/InnoviveItemQuantityPerBox/Configuration/InnoviveItemQuantityPerBox.json"
+        ]
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/InnoviveItemQuantityPerBox/Sass/_innoviveitemquantityperbox-innoviveitemquantityperbox.scss",
+            "myaccount": "Modules/InnoviveItemQuantityPerBox/Sass/_innoviveitemquantityperbox-innoviveitemquantityperbox.scss",
+            "checkout": "Modules/InnoviveItemQuantityPerBox/Sass/_innoviveitemquantityperbox-innoviveitemquantityperbox.scss"
+        },
+        "files": [
+            "Modules/InnoviveItemQuantityPerBox/Sass/_innoviveitemquantityperbox-innoviveitemquantityperbox.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/InnoviveItemQuantityPerBox/Templates/devma_innoviveitemquantityperbox_innoviveitemquantityperbox.tpl"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/InnoviveItemQuantityPerBox/Templates/devma_innoviveitemquantityperbox_innoviveitemquantityperbox.tpl"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/InnoviveItemQuantityPerBox/Templates/devma_innoviveitemquantityperbox_innoviveitemquantityperbox.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/InnoviveItemQuantityPerBox/JavaScript/Devma.InnoviveItemQuantityPerBox.InnoviveItemQuantityPerBox.js",
+            "myaccount": "Modules/InnoviveItemQuantityPerBox/JavaScript/Devma.InnoviveItemQuantityPerBox.InnoviveItemQuantityPerBox.js",
+            "checkout": "Modules/InnoviveItemQuantityPerBox/JavaScript/Devma.InnoviveItemQuantityPerBox.InnoviveItemQuantityPerBox.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/InnoviveItemQuantityPerBox/JavaScript/Devma.InnoviveItemQuantityPerBox.InnoviveItemQuantityPerBox.js",
+                    "Modules/InnoviveItemQuantityPerBox/JavaScript/InnoviveItemQuantityPerBox.View.js",
+                    "Modules/InnoviveItemQuantityPerBox/JavaScript/Devma.InnoviveItemQuantityPerBox.InnoviveItemQuantityPerBox.Model.js",
+                    "Modules/InnoviveItemQuantityPerBox/JavaScript/Devma.InnoviveItemQuantityPerBox.InnoviveItemQuantityPerBox.SS2Model.js"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/InnoviveItemQuantityPerBox/JavaScript/Devma.InnoviveItemQuantityPerBox.InnoviveItemQuantityPerBox.js",
+                    "Modules/InnoviveItemQuantityPerBox/JavaScript/InnoviveItemQuantityPerBox.View.js",
+                    "Modules/InnoviveItemQuantityPerBox/JavaScript/Devma.InnoviveItemQuantityPerBox.InnoviveItemQuantityPerBox.Model.js",
+                    "Modules/InnoviveItemQuantityPerBox/JavaScript/Devma.InnoviveItemQuantityPerBox.InnoviveItemQuantityPerBox.SS2Model.js"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/InnoviveItemQuantityPerBox/JavaScript/Devma.InnoviveItemQuantityPerBox.InnoviveItemQuantityPerBox.js",
+                    "Modules/InnoviveItemQuantityPerBox/JavaScript/InnoviveItemQuantityPerBox.View.js",
+                    "Modules/InnoviveItemQuantityPerBox/JavaScript/Devma.InnoviveItemQuantityPerBox.InnoviveItemQuantityPerBox.Model.js",
+                    "Modules/InnoviveItemQuantityPerBox/JavaScript/Devma.InnoviveItemQuantityPerBox.InnoviveItemQuantityPerBox.SS2Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/InnoviveItemQuantityPerBox/SuiteScript/Devma.InnoviveItemQuantityPerBox.InnoviveItemQuantityPerBox.js",
+        "files": [
+            "Modules/InnoviveItemQuantityPerBox/SuiteScript/Devma.InnoviveItemQuantityPerBox.InnoviveItemQuantityPerBox.js",
+            "Modules/InnoviveItemQuantityPerBox/SuiteScript/InnoviveItemQuantityPerBox.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace\\InnoviveItemQuantityPerBox",
+    "suitescript2": {
+        "files": [
+            "Modules/InnoviveItemQuantityPerBox/SuiteScript2/InnoviveItemQuantityPerBox.Service.ss"
+        ]
+    }
+}

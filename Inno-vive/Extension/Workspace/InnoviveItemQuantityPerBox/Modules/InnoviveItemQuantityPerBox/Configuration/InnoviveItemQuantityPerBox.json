@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": { 
+        "InnoviveItemQuantityPerBox.config": {
+            "group": "extensions",
+            "subtab": "InnoviveItemQuantityPerBox_subtab",
+            "type": "string",
+            "title": "InnoviveItemQuantityPerBox_Title",
+            "description": "Config description example",
+            "default": "Default config example"
+        }
+    }
+}

@@ -1,0 +1,119 @@
+{
+    "name": "InnoviveBoxQuantity",
+    "fantasyName": "InnoviveBoxQuantity",
+    "vendor": "Devma",
+    "version": "0.0.1",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=20.1.0",
+        "SCS": ">=20.1.0"
+    },
+    "description": "Extension for showing prices as price * box amount",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/InnoviveBoxQuantity.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/InnoviveBoxQuantity/Configuration/InnoviveBoxQuantity.json"
+        ]
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/InnoviveBoxQuantity/Sass/_innoviveboxquantity-innoviveboxquantity.scss",
+            "checkout": "Modules/InnoviveBoxQuantity/Sass/_innoviveboxquantity-innoviveboxquantity.scss",
+            "myaccount": "Modules/InnoviveBoxQuantity/Sass/_innoviveboxquantity-innoviveboxquantity.scss"
+        },
+        "files": [
+            "Modules/InnoviveBoxQuantity/Sass/_innoviveboxquantity-innoviveboxquantity.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/InnoviveBoxQuantity/Templates/devma_innoviveboxquantity_innoviveboxquantity.tpl",
+                    "Modules/InnoviveBoxQuantity/Overrides/Bridge/Modules/Cart@sco-2018.1.0/Templates/cart_item_summary.tpl",
+                    "Modules/InnoviveBoxQuantity/Overrides/Bridge/Modules/Header@sco-2018.1.0/Templates/header_mini_cart_item_cell.tpl",
+                    "Modules/InnoviveBoxQuantity/Overrides/Bridge/Modules/ProductViews@sco-2018.1.0/Templates/product_views_price.tpl",
+                    "Modules/InnoviveBoxQuantity/Overrides/Bridge/Modules/Transaction.Line.Views@sco-2018.1.0/Templates/transaction_line_views_price.tpl"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/InnoviveBoxQuantity/Templates/devma_innoviveboxquantity_innoviveboxquantity.tpl",
+                    "Modules/InnoviveBoxQuantity/Overrides/Bridge/Modules/Cart@sco-2018.1.0/Templates/cart_item_summary.tpl",
+                    "Modules/InnoviveBoxQuantity/Overrides/Bridge/Modules/Header@sco-2018.1.0/Templates/header_mini_cart_item_cell.tpl",
+                    "Modules/InnoviveBoxQuantity/Overrides/Bridge/Modules/ProductViews@sco-2018.1.0/Templates/product_views_price.tpl",
+                    "Modules/InnoviveBoxQuantity/Overrides/Bridge/Modules/Transaction.Line.Views@sco-2018.1.0/Templates/transaction_line_views_price.tpl"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/InnoviveBoxQuantity/Templates/devma_innoviveboxquantity_innoviveboxquantity.tpl",
+                    "Modules/InnoviveBoxQuantity/Overrides/Bridge/Modules/Cart@sco-2018.1.0/Templates/cart_item_summary.tpl",
+                    "Modules/InnoviveBoxQuantity/Overrides/Bridge/Modules/Header@sco-2018.1.0/Templates/header_mini_cart_item_cell.tpl",
+                    "Modules/InnoviveBoxQuantity/Overrides/Bridge/Modules/ProductViews@sco-2018.1.0/Templates/product_views_price.tpl",
+                    "Modules/InnoviveBoxQuantity/Overrides/Bridge/Modules/Transaction.Line.Views@sco-2018.1.0/Templates/transaction_line_views_price.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/InnoviveBoxQuantity/JavaScript/Devma.InnoviveBoxQuantity.InnoviveBoxQuantity.js",
+            "checkout": "Modules/InnoviveBoxQuantity/JavaScript/Devma.InnoviveBoxQuantity.InnoviveBoxQuantity.js",
+            "myaccount": "Modules/InnoviveBoxQuantity/JavaScript/Devma.InnoviveBoxQuantity.InnoviveBoxQuantity.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/InnoviveBoxQuantity/JavaScript/Devma.InnoviveBoxQuantity.InnoviveBoxQuantity.js",
+                    "Modules/InnoviveBoxQuantity/JavaScript/InnoviveBoxQuantity.View.js",
+                    "Modules/InnoviveBoxQuantity/JavaScript/Devma.InnoviveBoxQuantity.InnoviveBoxQuantity.Model.js",
+                    "Modules/InnoviveBoxQuantity/JavaScript/Devma.InnoviveBoxQuantity.InnoviveBoxQuantity.SS2Model.js"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/InnoviveBoxQuantity/JavaScript/Devma.InnoviveBoxQuantity.InnoviveBoxQuantity.js",
+                    "Modules/InnoviveBoxQuantity/JavaScript/InnoviveBoxQuantity.View.js",
+                    "Modules/InnoviveBoxQuantity/JavaScript/Devma.InnoviveBoxQuantity.InnoviveBoxQuantity.Model.js",
+                    "Modules/InnoviveBoxQuantity/JavaScript/Devma.InnoviveBoxQuantity.InnoviveBoxQuantity.SS2Model.js"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/InnoviveBoxQuantity/JavaScript/Devma.InnoviveBoxQuantity.InnoviveBoxQuantity.js",
+                    "Modules/InnoviveBoxQuantity/JavaScript/InnoviveBoxQuantity.View.js",
+                    "Modules/InnoviveBoxQuantity/JavaScript/Devma.InnoviveBoxQuantity.InnoviveBoxQuantity.Model.js",
+                    "Modules/InnoviveBoxQuantity/JavaScript/Devma.InnoviveBoxQuantity.InnoviveBoxQuantity.SS2Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/InnoviveBoxQuantity/SuiteScript/Devma.InnoviveBoxQuantity.InnoviveBoxQuantity.js",
+        "files": [
+            "Modules/InnoviveBoxQuantity/SuiteScript/Devma.InnoviveBoxQuantity.InnoviveBoxQuantity.js",
+            "Modules/InnoviveBoxQuantity/SuiteScript/InnoviveBoxQuantity.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace\\InnoviveBoxQuantity",
+    "suitescript2": {
+        "files": [
+            "Modules/InnoviveBoxQuantity/SuiteScript2/InnoviveBoxQuantity.Service.ss"
+        ]
+    }
+}

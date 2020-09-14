@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": { 
+        "InnoviveUploadPdfFile.config": {
+            "group": "extensions",
+            "subtab": "InnoviveUploadPdfFile_subtab",
+            "type": "string",
+            "title": "InnoviveUploadPdfFile_Title",
+            "description": "Config description example",
+            "default": "Default config example"
+        }
+    }
+}

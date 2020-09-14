@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": { 
+        "InnoviveBoxQuantity.config": {
+            "group": "extensions",
+            "subtab": "InnoviveBoxQuantity_subtab",
+            "type": "string",
+            "title": "InnoviveBoxQuantity_Title",
+            "description": "Config description example",
+            "default": "Default config example"
+        }
+    }
+}
