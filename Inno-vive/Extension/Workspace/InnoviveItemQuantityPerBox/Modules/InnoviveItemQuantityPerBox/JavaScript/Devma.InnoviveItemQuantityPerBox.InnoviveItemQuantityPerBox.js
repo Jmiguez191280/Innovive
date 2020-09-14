@@ -66,6 +66,7 @@ define(
 						if(jQuery('#case-quantity')) jQuery('#case-quantity').val(qtyPerBox * parseInt(qty));
 					}
 				})
+
 				//Section Cart
 				QuickAddView.prototype.saveForm = _.wrap(QuickAddView.prototype.saveForm, function (fn, e) {
 					debugger;
@@ -167,7 +168,7 @@ define(
 				//Set QTY Item page
 
 				if (pdp) {
-					debugger;
+				
 					layout.on('afterShowContent', function () {
 						console.log(this)
 						var iteminfo = pdp.getItemInfo();
