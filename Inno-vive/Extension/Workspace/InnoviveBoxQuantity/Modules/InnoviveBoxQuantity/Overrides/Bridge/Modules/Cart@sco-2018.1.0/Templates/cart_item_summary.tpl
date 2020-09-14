@@ -16,10 +16,7 @@
 				<input type="hidden" name="quantity" id="quantity-{{lineId}}" value="1">
 			{{else}}
 				<div class="cart-item-summary-item-list-actionable-container-qty">
-				<label class="cart-item-summary-item-list-actionable-label-qty">{{translate ' Quantity:'}}</label>
-                <input disabled type="text" id="case-quantity-{{lineId}}" class="cart-item-summary-quantity-value quantity-{{lineId}}" value="" min=""/>
-					
-					<label class="cart-item-summary-item-list-actionable-label-qty">{{translate 'Case Quantity'}}*</label>
+					<label class="cart-item-summary-item-list-actionable-label-qty">{{translate 'Quantity:'}}*</label>
 					<div class="cart-item-summary-item-list-actionable-input-qty">
 							<button type="button" class="cart-item-summary-quantity-remove" data-action="minus" {{#if isMinusButtonDisabled}}disabled{{/if}}>-</button>
 							<input type="number" data-type="cart-item-quantity-input" name="quantity" id="quantity-{{lineId}}" class="cart-item-summary-quantity-value quantity-{{lineId}}" value="{{line.quantity}}" min="1"/>

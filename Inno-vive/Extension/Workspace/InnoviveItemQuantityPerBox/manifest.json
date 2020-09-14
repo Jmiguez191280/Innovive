@@ -2,15 +2,14 @@
     "name": "InnoviveItemQuantityPerBox",
     "fantasyName": "Innovive Item Quantity Per Box",
     "vendor": "Devma",
-    "version": "1.0.0",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {
         "SCA": ">=20.1.0",
         "SCS": ">=20.1.0"
     },
+    "version": "1.0.0",
     "description": "This extension updates the selected quantity of the item per box.",
-    "skins": [],
     "assets": {
         "img": {
             "files": []
@@ -29,6 +28,28 @@
             "Modules/InnoviveItemQuantityPerBox/Configuration/InnoviveItemQuantityPerBox.json"
         ]
     },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/InnoviveItemQuantityPerBox/Templates/devma_innoviveitemquantityperbox_innoviveitemquantityperbox.tpl",
+                    "Modules/InnoviveItemQuantityPerBox/Templates/paymentmethod_creditcard_list.tpl"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/InnoviveItemQuantityPerBox/Templates/devma_innoviveitemquantityperbox_innoviveitemquantityperbox.tpl",
+                    "Modules/InnoviveItemQuantityPerBox/Templates/paymentmethod_creditcard_list.tpl"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/InnoviveItemQuantityPerBox/Templates/devma_innoviveitemquantityperbox_innoviveitemquantityperbox.tpl",
+                    "Modules/InnoviveItemQuantityPerBox/Templates/paymentmethod_creditcard_list.tpl"
+                ]
+            }
+        }
+    },
     "sass": {
         "entry_points": {
             "shopping": "Modules/InnoviveItemQuantityPerBox/Sass/_innoviveitemquantityperbox-innoviveitemquantityperbox.scss",
@@ -38,25 +59,6 @@
         "files": [
             "Modules/InnoviveItemQuantityPerBox/Sass/_innoviveitemquantityperbox-innoviveitemquantityperbox.scss"
         ]
-    },
-    "templates": {
-        "application": {
-            "shopping": {
-                "files": [
-                    "Modules/InnoviveItemQuantityPerBox/Templates/devma_innoviveitemquantityperbox_innoviveitemquantityperbox.tpl"
-                ]
-            },
-            "myaccount": {
-                "files": [
-                    "Modules/InnoviveItemQuantityPerBox/Templates/devma_innoviveitemquantityperbox_innoviveitemquantityperbox.tpl"
-                ]
-            },
-            "checkout": {
-                "files": [
-                    "Modules/InnoviveItemQuantityPerBox/Templates/devma_innoviveitemquantityperbox_innoviveitemquantityperbox.tpl"
-                ]
-            }
-        }
     },
     "javascript": {
         "entry_points": {
@@ -98,7 +100,6 @@
             "Modules/InnoviveItemQuantityPerBox/SuiteScript/InnoviveItemQuantityPerBox.ServiceController.js"
         ]
     },
-    "local_folder": "Workspace\\InnoviveItemQuantityPerBox",
     "suitescript2": {
         "files": [
             "Modules/InnoviveItemQuantityPerBox/SuiteScript2/InnoviveItemQuantityPerBox.Service.ss"
