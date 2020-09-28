@@ -26,7 +26,7 @@
 			</div>
 		{{/if}}
 
-		<div data-view="Options.Collection" class="product-details-options-selector-option-container"></div>
+		<div  data-view="Options.Collection" class="product-details-options-selector-option-container"></div>
 	</div>
 </div>
 

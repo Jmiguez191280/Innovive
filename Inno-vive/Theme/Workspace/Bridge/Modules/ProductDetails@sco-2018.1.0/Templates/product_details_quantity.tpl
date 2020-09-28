@@ -12,7 +12,7 @@
 		<label for="quantity" class="product-details-quantity-options-title">
 				{{translate 'Quantity'}}
 			</label>
-  <input  name="quantity_case" id="quantity_case"  class="product-details-quantity-value" value="" min="" disabled>
+  <input  name="quantity_case"  id="quantity_case{{model.item.internalid}}"  class="product-details-quantity-value" value="" min="" disabled>
 			<label for="quantity" class="product-details-quantity-options-title">
 				{{translate 'Case Quantity'}}
 			</label>
