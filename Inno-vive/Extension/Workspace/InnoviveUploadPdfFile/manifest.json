@@ -2,14 +2,15 @@
     "name": "InnoviveUploadPdfFile",
     "fantasyName": "InnoviveUploadPdfFile",
     "vendor": "Devma",
+    "version": "1.0.0",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {
         "SCA": "",
         "SCS": ""
     },
-    "version": "1.0.0",
     "description": "Extension for upload pdf file",
+    "skins": [],
     "assets": {
         "img": {
             "files": []
@@ -28,6 +29,14 @@
             "Modules/InnoviveUploadPdfFile/Configuration/InnoviveUploadPdfFile.json"
         ]
     },
+    "sass": {
+        "entry_points": {
+            "checkout": "Modules/InnoviveUploadPdfFile/Sass/_innoviveuploadpdffile-innoviveuploadpdffile.scss"
+        },
+        "files": [
+            "Modules/InnoviveUploadPdfFile/Sass/_innoviveuploadpdffile-innoviveuploadpdffile.scss"
+        ]
+    },
     "templates": {
         "application": {
             "checkout": {
@@ -36,14 +45,6 @@
                 ]
             }
         }
-    },
-    "sass": {
-        "entry_points": {
-            "checkout": "Modules/InnoviveUploadPdfFile/Sass/_innoviveuploadpdffile-innoviveuploadpdffile.scss"
-        },
-        "files": [
-            "Modules/InnoviveUploadPdfFile/Sass/_innoviveuploadpdffile-innoviveuploadpdffile.scss"
-        ]
     },
     "javascript": {
         "entry_points": {
@@ -67,6 +68,7 @@
             "Modules/InnoviveUploadPdfFile/SuiteScript/InnoviveUploadPdfFile.ServiceController.js"
         ]
     },
+    "local_folder": "Workspace\\InnoviveUploadPdfFile",
     "suitescript2": {
         "files": [
             "Modules/InnoviveUploadPdfFile/SuiteScript2/InnoviveUploadPdfFile.Service.ss"

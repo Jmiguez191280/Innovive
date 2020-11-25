@@ -43,17 +43,20 @@
         "application": {
             "shopping": {
                 "files": [
-                    "Modules/InnoviveItemQuantityPerBox/Templates/devma_innoviveitemquantityperbox_innoviveitemquantityperbox.tpl"
+                    "Modules/InnoviveItemQuantityPerBox/Templates/devma_innoviveitemquantityperbox_innoviveitemquantityperbox.tpl",
+                    "Modules/InnoviveItemQuantityPerBox/Templates/paymentmethod_creditcard_list.tpl"
                 ]
             },
             "myaccount": {
                 "files": [
-                    "Modules/InnoviveItemQuantityPerBox/Templates/devma_innoviveitemquantityperbox_innoviveitemquantityperbox.tpl"
+                    "Modules/InnoviveItemQuantityPerBox/Templates/devma_innoviveitemquantityperbox_innoviveitemquantityperbox.tpl",
+                    "Modules/InnoviveItemQuantityPerBox/Templates/paymentmethod_creditcard_list.tpl"
                 ]
             },
             "checkout": {
                 "files": [
-                    "Modules/InnoviveItemQuantityPerBox/Templates/devma_innoviveitemquantityperbox_innoviveitemquantityperbox.tpl"
+                    "Modules/InnoviveItemQuantityPerBox/Templates/devma_innoviveitemquantityperbox_innoviveitemquantityperbox.tpl",
+                    "Modules/InnoviveItemQuantityPerBox/Templates/paymentmethod_creditcard_list.tpl"
                 ]
             }
         }

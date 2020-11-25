@@ -10,7 +10,7 @@ R{{multiply price item.custitem_qty_per_box}}
 <div class="transaction-line-views-price">
 	<span class="transaction-line-views-price-exact" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
 		<meta itemprop="priceCurrency" content="{{currencyCode}}"/>
-		<span class="transaction-line-views-price-lead" itemprop="price" data-rate="{{price}}">
+		<span style="display:none" class="transaction-line-views-price-lead" itemprop="price" data-rate="{{price}}">
 			{{rateFormatted}}
 	</span>
 		{{#if showComparePrice}}

@@ -17,7 +17,8 @@
 		</div>
 		<div class="order-wizard-paymentmethod-invoice-module-balance">
 			<p class="order-wizard-paymentmethod-invoice-module-balance-label">
-				{{translate 'Available Balance'}}
+				<!--{{translate 'Available Balance'}}-->
+				{{translate 'Available Credit'}}
 			</p>
 			<p class="order-wizard-paymentmethod-invoice-module-balance-value">
 				{{balanceAvailable}}

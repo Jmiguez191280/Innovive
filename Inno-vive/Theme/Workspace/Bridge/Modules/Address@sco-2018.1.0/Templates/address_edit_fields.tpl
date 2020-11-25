@@ -96,13 +96,13 @@
 	</div>
 </div>
 
-<div class="address-edit-fields-group" data-input="isresidential">
+<!--<div class="address-edit-fields-group" data-input="isresidential">
 	<label class="address-edit-fields-group-input-checkbox">
 		<input type="checkbox" id="{{manage}}isresidential" value="T" data-unchecked-value="F" name="isresidential" {{#if isAddressResidential}} checked {{/if}} >
 		{{translate 'This is a Residential Address'}}
 		<i class="address-edit-fields-icon-question-sign" data-toggle="tooltip" title="" data-original-title="{{translate 'Indicating that this is a residential address will help us determine the best delivery method for your items.'}}"></i>
 	</label>
-</div>
+</div>-->
 
 
 {{#if showDefaultControls}}

@@ -19,7 +19,7 @@
 				id="purchase-order-number"
 				class="order-wizard-paymentmethod-purchasenumber-module-purchase-order-value"
 				value="{{purchaseNumber}}"
-		>
+		><div data-view="uploadFileView"></div></span>
 		</div>
 	</div>
 </div>
