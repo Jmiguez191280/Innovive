@@ -16,7 +16,6 @@ define(
 		return {
 			mountToApp: function mountToApp(container) {
 				Handlebars.registerHelper('multiply', function (a, b) {
-				
 					console.log(a);
 					console.log(b);
 					return Number(a) * Number(b);

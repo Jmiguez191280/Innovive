@@ -18,12 +18,14 @@
 			{{else}}
 				<div class="cart-item-summary-item-list-actionable-container-qty">
 			<label class="cart-item-summary-item-list-actionable-label-qty">{{translate 'Quantity:'}}</label>
+
 			   {{#each line.options}}
 			   {{log this}}
 			    {{#ifEquals cartOptionId 'custcol_sdb_sca_qty_box'}}
                 <input disabled type="text"  name="" id="case-quantity-{{line.item.internalid}}" class="cart-item-summary-quantity-value quantity-{{lineId}}" value="{{value.label}}" />
 				{{/ifEquals}}
 				{{/each}}
+
 					<label class="cart-item-summary-item-list-actionable-label-qty">{{translate 'Case Quantity:'}}</label>
 					<div class="cart-item-summary-item-list-actionable-input-qty">
 							<button type="button" class="cart-item-summary-quantity-remove" data-action="minus" {{#if isMinusButtonDisabled}}disabled{{/if}}>-</button>
