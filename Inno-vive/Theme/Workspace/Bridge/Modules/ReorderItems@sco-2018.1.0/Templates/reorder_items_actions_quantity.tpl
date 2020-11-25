@@ -4,10 +4,16 @@
 	provided, however, if you are an authorized user with a NetSuite account or log-in, you
 	may use this code subject to the terms that govern your access and use.
 }}
+<div class="reorder-items-actions-quantity">
+		<label class="reorder-items-actions-quantity-label">{{translate 'Quantity:'}}</label>
+		<div class="reorder-items-actions-quantity-input">
+				<input style="width: 73px;" type="number" name="item_quantity_case" case-qty="{{qtyPerBox}}" data-line-id-case="{{lineId}}" value="{{qtyPerBox}}" class="reorder-items-actions-quantity-value" min="{{minimumQuantity}}" disabled>
+		</div>
+</div>
 
 <div class="reorder-items-actions-quantity">
 	{{#if showQuantityInput}}
-		<label class="reorder-items-actions-quantity-label">{{translate 'Quantity:'}}</label>
+		<label class="reorder-items-actions-quantity-label">{{translate 'Case Quantity:'}}</label>
 		<div class="reorder-items-actions-quantity-input">
 			<button class="reorder-items-actions-quantity-remove" data-action="minus">-</button>
 				<input type="number" name="item_quantity" data-line-id="{{lineId}}" value="{{itemQuantity}}" class="reorder-items-actions-quantity-value" min="{{minimumQuantity}}">
