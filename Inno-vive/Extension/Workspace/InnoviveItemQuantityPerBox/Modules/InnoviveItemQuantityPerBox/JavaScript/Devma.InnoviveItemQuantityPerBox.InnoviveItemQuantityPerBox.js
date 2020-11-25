@@ -13,6 +13,10 @@ define(
 		, 'Cart.AddToCart.Button.View'
 		, 'LiveOrder.Line.Model'
 		, 'Cart.Confirmation.Helpers'
+
+		, 'Cart.Detailed.View'
+		
+		
 	]
 	, function (
 		InnoviveItemQuantityPerBoxView
@@ -25,7 +29,12 @@ define(
 		, Utils
 		, AddToCartButtonView
         , LiveOrderLineModel
-        , CartConfirmationHelpers
+
+		, CartConfirmationHelpers
+		, CartDetailView
+		
+		
+
 	) {
 		'use strict';
 
@@ -39,6 +48,7 @@ define(
 				var layout = container.getComponent('Layout');
 				var cart = container.getComponent("Cart");
 				var pdp = container.getComponent("PDP");
+				var myaccount = container.getComponent('MyAccountMenu');
 				CartDetailedView.prototype.events = {
 					'change [data-type="cart-item-quantity-input"]': 'itemsPerBox',
 					'change [data-type="cart-item-quantity-input"]': 'debouncedUpdateItemQuantity',
@@ -52,7 +62,7 @@ define(
 				}
 
 				CartDetailedView.prototype.itemsPerBox = function (e) {
-					debugger;
+				//	debugger;
 					var element = jQuery('[data-type="cart-item-quantity-input"]');
 					for (var i = 0; i < this.model.attributes.lines.models.length; i++) {
 						var id = element[i].id;
@@ -72,13 +82,20 @@ define(
 				};
 
 				CartDetailedView.prototype.debouncedUpdateItemQuantity = _.wrap(CartDetailedView.prototype.debouncedUpdateItemQuantity, function (fn, e) {
-					debugger;
+
+					//debugger;
+
 					this.updateItemQuantity(e);
 					
 				})
 
+
+			
+
 				CartDetailedView.prototype.initPlugins = _.wrap(CartDetailedView.prototype.initPlugins, function (fn, e) {
-					debugger;
+					//debugger;
+=
+
 					self = this
 					if (this.application.Configuration.get('siteSettings.sitetype') === 'ADVANCED') {
 						this.$('[data-action="sticky"]').scStickyButton();
@@ -89,6 +106,12 @@ define(
 						this.$('[data-type="carousel-items"]'),
 						this.application.Configuration.get('bxSliderDefaults')
 					);
+
+					
+				})
+
+				AddToCartButtonView.prototype.addToCart = _.wrap(AddToCartButtonView.prototype.addToCart, function (fn, e) { 
+
 					if (allItemsCart && allItemsCart.length) {
 
 						for (var y = 0; y < allItemsCart.length; y++) {
@@ -117,6 +140,7 @@ define(
 
 				AddToCartButtonView.prototype.addToCart = _.wrap(AddToCartButtonView.prototype.addToCart, function (fn, e) { 
 					debugger
+
 					e.preventDefault();
 					const self = this;
 					let cart_promise;
@@ -129,7 +153,10 @@ define(
 						return;
 					}
 
-					this.model.setOption('custcol_sdb_sca_qty_box',jQuery('.product-details-quantity-value').val())
+					var qtyVal = jQuery('#quantity').val() || jQuery('#in-modal-quantity').val()
+					var newQty = (this.model.get('item').get('custitem_sales_qty_multiple') * parseInt(qtyVal))
+					this.model.setOption('custcol_sdb_sca_qty_box',newQty.toString())
+
 					this.model.setOption('custcol_sdb_sca_original_qty',jQuery('#quantity').val())
 					
 
@@ -161,6 +188,28 @@ define(
 					this.disableElementsOnPromise(cart_promise, e.target);
 					return false;
 				}) 
+
+				var obj = {};
+				obj['blur [name="quantity"]'] = 'updateBoxQty';
+				obj['focusout [name="quantity"]'] = 'updateBoxQty';
+				obj['focusin [name="quantity"]'] = 'updateBoxQty';
+
+				ProductDetailsQuantityView.prototype.events = obj;
+				ProductDetailsQuantityView.prototype.updateBoxQty = _.wrap(ProductDetailsQuantityView.prototype.updateBoxQty, function (fn, e) {
+					
+					var qty = this.$('[name="quantity"]').val();
+					var qtyPerBox = this.model.attributes.item.attributes.custitem_sales_qty_multiple;
+					var intId = this.model.attributes.item.id;
+					if (qtyPerBox) {
+						jQuery('#quantity_case'+intId).val(qtyPerBox * parseInt(qty));
+						jQuery('#in-modal-quantity_case' + intId).val(qtyPerBox * parseInt(qty));
+					} else {
+						jQuery('#quantity_case'+intId).val(parseInt(qty) * 1);
+						jQuery('#in-modal-quantity_case' + intId).val(parseInt(qty) * 1);
+					}
+				})
+
+
 
 				CartDetailedView.prototype.removeItem = _.wrap(CartDetailedView.prototype.removeItem, function (fn, e) {
 					//debugger;
@@ -201,7 +250,7 @@ define(
 
 				//Section Cart
 				QuickAddView.prototype.saveForm = _.wrap(QuickAddView.prototype.saveForm, function (fn, e) {
-					debugger;
+			//		debugger;
 					e.preventDefault();
 
 					Backbone.Validation.bind(this);
@@ -255,56 +304,57 @@ define(
 
 				});
 
-				var allItemsCart;
-				if (cart) {
-					layout.on('beforeShowContent', function () {
+				// var allItemsCart;
+				// if (cart) {
+				// 	layout.on('beforeShowContent', function () {
 						
-						var dataItemCart = [];
-						cart.getLines().then(function (lines) {
-							if (lines.length) {
-								for (var x = 0; x < lines.length; x++) {
-									dataItemCart.push({
-										item: lines[x].internalid,
-										qtyBox: lines[x].item.extras.custitem_sales_qty_multiple
-									})
-									console.log('lines', lines[x].item.extras.custitem_sales_qty_multiple)
-								}
-								allItemsCart = dataItemCart;
-								console.log('lines2', JSON.stringify(allItemsCart))
-							}
-						});
-					})
+				// 		var dataItemCart = [];
+				// 		cart.getLines().then(function (lines) {
+				// 			if (lines.length) {
+				// 				for (var x = 0; x < lines.length; x++) {
+				// 					dataItemCart.push({
+				// 						item: lines[x].internalid,
+				// 						qtyBox: lines[x].item.extras.custitem_sales_qty_multiple
+				// 					})
+				// 					console.log('lines', lines[x].item.extras.custitem_sales_qty_multiple)
+				// 				}
+				// 				allItemsCart = dataItemCart;
+				// 				console.log('lines2', JSON.stringify(allItemsCart))
+				// 			}
+				// 		});
+				// 	})
 
-					layout.on('afterShowContent', function () {
-						debugger;
-						if (allItemsCart && allItemsCart.length) {
+				// 	layout.on('afterShowContent', function () {
+				// 		//;
+				// 		if (allItemsCart && allItemsCart.length) {
 
-							for (var y = 0; y < allItemsCart.length; y++) {
-								var element = jQuery('[data-type="cart-item-quantity-input"]');
+				// 			for (var y = 0; y < allItemsCart.length; y++) {
+				// 				var element = jQuery('[data-type="cart-item-quantity-input"]');
 	
-								if (element[y]) var itemElement = element[y].id.split('item')[1].split('set')[0];
-								if (allItemsCart && allItemsCart.length) var itemElementCart = allItemsCart[y].item.split('item')[1].split('set')[0];
+				// 				if (element[y]) var itemElement = element[y].id.split('item')[1].split('set')[0];
+				// 				if (allItemsCart && allItemsCart.length) var itemElementCart = allItemsCart[y].item.split('item')[1].split('set')[0];
 	
-								if (itemElement == itemElementCart) {
+				// 				if (itemElement == itemElementCart) {
 	
-									if (allItemsCart[y].qtyBox) {
-										if (jQuery('#case-quantity-' + itemElement)) jQuery('#case-quantity-' + itemElement).val(allItemsCart[y].qtyBox * parseInt(element[y].value))
-										jQuery('#in-modal-quantity_case' + itemElement).val(allItemsCart[y].qtyBox * parseInt(element[y].value));
-									} else {
-										if (jQuery('#case-quantity-' + itemElement)) jQuery('#case-quantity-' + itemElement).val(parseInt(element[y].value) * 1);
-										jQuery('#in-modal-quantity_case' + itemElement).val(allItemsCart[y].qtyBox * parseInt(element[y].value));
-									}
+				// 					if (allItemsCart[y].qtyBox) {
+				// 						if (jQuery('#case-quantity-' + itemElement)) jQuery('#case-quantity-' + itemElement).val(allItemsCart[y].qtyBox * parseInt(element[y].value))
+				// 						jQuery('#in-modal-quantity_case' + itemElement).val(allItemsCart[y].qtyBox * parseInt(element[y].value));
+				// 					} else {
+				// 						if (jQuery('#case-quantity-' + itemElement)) jQuery('#case-quantity-' + itemElement).val(parseInt(element[y].value) * 1);
+				// 						jQuery('#in-modal-quantity_case' + itemElement).val(allItemsCart[y].qtyBox * parseInt(element[y].value));
+				// 					}
 	
 	
-								}
+				// 				}
 	
-							}
+				// 			}
 
-						}
+				// 		}
 
 
-					})
-				}
+				// 	})
+				// }
+
 
 				//Set QTY Item page
 
@@ -351,7 +401,7 @@ define(
 				});
 				// ProductDetailsQuantityView.prototype.initialize= _.wrap(ProductDetailsQuantityView.prototype.initialize, function (fn, e) {
 				CartItemSummaryView.prototype.addQuantity = _.wrap(ProductDetailsQuantityView.prototype.addQuantity, function (fn, e) {
-					debugger;
+				//	debugger;
 					e.preventDefault();
 
 					const $element = this.$(e.target);
@@ -367,7 +417,26 @@ define(
 
 
 				});
-
+				CartDetailView.prototype.debouncedUpdateItemQuantity = _.wrap(CartDetailView.prototype.debouncedUpdateItemQuantity, function (fn, e) { 
+					e.preventDefault();
+					
+					const $form = jQuery(e.target).closest('form');
+					const $input = $form.find('[name="quantity"]');
+					const options = $form.serializeObject();
+					var  internalid  = options;
+					let line = this.model.get('lines').get(internalid);
+					var qty = parseInt(options.quantity);
+					var qtyPerBox = line.get('item').get('custitem_sales_qty_multiple')
+					var validate = true;
+					var itemId = line.get('item').id;
+					var optionsItem = line.get('options').models;
+					_.each(optionsItem,function(model){
+						if(model.get('cartOptionId')=== "custcol_sdb_sca_qty_box"){
+							model.set('value',{internalid:(qtyPerBox*qty).toString(),label:(qtyPerBox*qty).toString()})
+						}
+					})
+					this.updateItemQuantity(e);
+				})
 
 				// });
 				/** @type {LayoutComponent} */

@@ -9,6 +9,7 @@
 <!--ajatest-->
 {{#if isPriceEnabled}}
 <div class="cart-item-summary-item-list-actionable-qty">
+
 	<form action="#" class="cart-item-summary-item-list-actionable-qty-form" data-action="update-quantity" data-validation="control-group">
 		<input type="hidden" name="internalid" id="update-internalid-{{lineId}}" class="update-internalid-{{lineId}}" value="{{lineId}}">
 		<label for="quantity-{{lineId}}" data-validation="control">
@@ -17,7 +18,13 @@
 			{{else}}
 				<div class="cart-item-summary-item-list-actionable-container-qty">
 			<label class="cart-item-summary-item-list-actionable-label-qty">{{translate 'Quantity:'}}</label>
-                <input disabled type="text"  name="" id="case-quantity-{{line.item.internalid}}" class="cart-item-summary-quantity-value quantity-{{lineId}}" value="" />
+
+			   {{#each line.options}}
+			   {{log this}}
+			    {{#ifEquals cartOptionId 'custcol_sdb_sca_qty_box'}}
+                <input disabled type="text"  name="" id="case-quantity-{{line.item.internalid}}" class="cart-item-summary-quantity-value quantity-{{lineId}}" value="{{value.label}}" />
+				{{/ifEquals}}
+				{{/each}}
 
 					<label class="cart-item-summary-item-list-actionable-label-qty">{{translate 'Case Quantity:'}}</label>
 					<div class="cart-item-summary-item-list-actionable-input-qty">
@@ -43,13 +50,17 @@
 </div>
 
 <div data-view="Quantity.Pricing"></div>
-
+{{log this}}
 <div class="cart-item-summary-item-list-actionable-amount">
 	<span class="cart-item-summary-item-list-actionable-amount-label">{{translate 'Amount: ' }}</span>
 	<span class="cart-item-summary-amount-value">{{ line.total_formatted }}</span>
 	{{#if showComparePrice}}
 		<small class="muted cart-item-summary-item-view-old-price">{{ line.amount_formatted}}</small>
 	{{/if}}
+</div>
+<div class="cart-item-summary-item-list-actionable-amount">
+	<span class="cart-item-summary-item-list-actionable-amount-label">{{translate 'Unit Price: ' }}</span>
+	<span class="cart-item-summary-amount-value">{{ line.rate_formatted }}</span>
 </div>
 
 <div data-view="PromocodeList" class="cart-item-summary-promocodes"></div>
