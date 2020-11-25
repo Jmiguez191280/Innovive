@@ -2,15 +2,14 @@
     "name": "InnoviveItemQuantityPerBox",
     "fantasyName": "Innovive Item Quantity Per Box",
     "vendor": "Devma",
-    "version": "1.0.0",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {
         "SCA": ">=20.1.0",
         "SCS": ">=20.1.0"
     },
+    "version": "1.0.0",
     "description": "This extension updates the selected quantity of the item per box.",
-    "skins": [],
     "assets": {
         "img": {
             "files": []
@@ -27,16 +26,6 @@
     "configuration": {
         "files": [
             "Modules/InnoviveItemQuantityPerBox/Configuration/InnoviveItemQuantityPerBox.json"
-        ]
-    },
-    "sass": {
-        "entry_points": {
-            "shopping": "Modules/InnoviveItemQuantityPerBox/Sass/_innoviveitemquantityperbox-innoviveitemquantityperbox.scss",
-            "myaccount": "Modules/InnoviveItemQuantityPerBox/Sass/_innoviveitemquantityperbox-innoviveitemquantityperbox.scss",
-            "checkout": "Modules/InnoviveItemQuantityPerBox/Sass/_innoviveitemquantityperbox-innoviveitemquantityperbox.scss"
-        },
-        "files": [
-            "Modules/InnoviveItemQuantityPerBox/Sass/_innoviveitemquantityperbox-innoviveitemquantityperbox.scss"
         ]
     },
     "templates": {
@@ -60,6 +49,16 @@
                 ]
             }
         }
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/InnoviveItemQuantityPerBox/Sass/_innoviveitemquantityperbox-innoviveitemquantityperbox.scss",
+            "myaccount": "Modules/InnoviveItemQuantityPerBox/Sass/_innoviveitemquantityperbox-innoviveitemquantityperbox.scss",
+            "checkout": "Modules/InnoviveItemQuantityPerBox/Sass/_innoviveitemquantityperbox-innoviveitemquantityperbox.scss"
+        },
+        "files": [
+            "Modules/InnoviveItemQuantityPerBox/Sass/_innoviveitemquantityperbox-innoviveitemquantityperbox.scss"
+        ]
     },
     "javascript": {
         "entry_points": {
@@ -101,7 +100,6 @@
             "Modules/InnoviveItemQuantityPerBox/SuiteScript/InnoviveItemQuantityPerBox.ServiceController.js"
         ]
     },
-    "local_folder": "Workspace\\InnoviveItemQuantityPerBox",
     "suitescript2": {
         "files": [
             "Modules/InnoviveItemQuantityPerBox/SuiteScript2/InnoviveItemQuantityPerBox.Service.ss"

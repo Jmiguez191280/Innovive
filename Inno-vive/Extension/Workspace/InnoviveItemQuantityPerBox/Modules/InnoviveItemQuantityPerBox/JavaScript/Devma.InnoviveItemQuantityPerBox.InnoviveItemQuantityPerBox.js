@@ -13,6 +13,7 @@ define(
 		, 'Cart.AddToCart.Button.View'
 		, 'LiveOrder.Line.Model'
 		, 'Cart.Confirmation.Helpers'
+
 		, 'Cart.Detailed.View'
 		
 		
@@ -28,10 +29,12 @@ define(
 		, Utils
 		, AddToCartButtonView
         , LiveOrderLineModel
+
 		, CartConfirmationHelpers
 		, CartDetailView
 		
 		
+
 	) {
 		'use strict';
 
@@ -79,15 +82,20 @@ define(
 				};
 
 				CartDetailedView.prototype.debouncedUpdateItemQuantity = _.wrap(CartDetailedView.prototype.debouncedUpdateItemQuantity, function (fn, e) {
+
 					//debugger;
+
 					this.updateItemQuantity(e);
 					
 				})
+
 
 			
 
 				CartDetailedView.prototype.initPlugins = _.wrap(CartDetailedView.prototype.initPlugins, function (fn, e) {
 					//debugger;
+=
+
 					self = this
 					if (this.application.Configuration.get('siteSettings.sitetype') === 'ADVANCED') {
 						this.$('[data-action="sticky"]').scStickyButton();
@@ -98,11 +106,41 @@ define(
 						this.$('[data-type="carousel-items"]'),
 						this.application.Configuration.get('bxSliderDefaults')
 					);
+
 					
 				})
 
 				AddToCartButtonView.prototype.addToCart = _.wrap(AddToCartButtonView.prototype.addToCart, function (fn, e) { 
-				//	debugger
+
+					if (allItemsCart && allItemsCart.length) {
+
+						for (var y = 0; y < allItemsCart.length; y++) {
+							var element = jQuery('[data-type="cart-item-quantity-input"]');
+
+							if (element[y]) var itemElement = element[y].id.split('item')[1].split('set')[0];
+							if (allItemsCart && allItemsCart.length) var itemElementCart = allItemsCart[y].item.split('item')[1].split('set')[0];
+
+							if (itemElement == itemElementCart) {
+
+								if (allItemsCart[y].qtyBox) {
+									if (jQuery('#case-quantity-' + itemElement)) jQuery('#case-quantity-' + itemElement).val(allItemsCart[y].qtyBox * parseInt(element[y].value))
+									jQuery('#in-modal-quantity_case' + itemElement).val(allItemsCart[y].qtyBox * parseInt(element[y].value));
+								} else {
+									if (jQuery('#case-quantity-' + itemElement)) jQuery('#case-quantity-' + itemElement).val(parseInt(element[y].value) * 1);
+									jQuery('#in-modal-quantity_case' + itemElement).val(allItemsCart[y].qtyBox * parseInt(element[y].value));
+								}
+
+
+							}
+
+						}
+
+					}
+				})
+
+				AddToCartButtonView.prototype.addToCart = _.wrap(AddToCartButtonView.prototype.addToCart, function (fn, e) { 
+					debugger
+
 					e.preventDefault();
 					const self = this;
 					let cart_promise;
@@ -114,9 +152,11 @@ define(
 					) {
 						return;
 					}
+
 					var qtyVal = jQuery('#quantity').val() || jQuery('#in-modal-quantity').val()
 					var newQty = (this.model.get('item').get('custitem_sales_qty_multiple') * parseInt(qtyVal))
 					this.model.setOption('custcol_sdb_sca_qty_box',newQty.toString())
+
 					this.model.setOption('custcol_sdb_sca_original_qty',jQuery('#quantity').val())
 					
 
@@ -148,6 +188,7 @@ define(
 					this.disableElementsOnPromise(cart_promise, e.target);
 					return false;
 				}) 
+
 				var obj = {};
 				obj['blur [name="quantity"]'] = 'updateBoxQty';
 				obj['focusout [name="quantity"]'] = 'updateBoxQty';
@@ -167,6 +208,8 @@ define(
 						jQuery('#in-modal-quantity_case' + intId).val(parseInt(qty) * 1);
 					}
 				})
+
+
 
 				CartDetailedView.prototype.removeItem = _.wrap(CartDetailedView.prototype.removeItem, function (fn, e) {
 					//debugger;
@@ -311,6 +354,7 @@ define(
 
 				// 	})
 				// }
+
 
 				//Set QTY Item page
 

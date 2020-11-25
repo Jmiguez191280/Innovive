@@ -8,7 +8,9 @@
     style="height: 35px;left: 318px;top: -50px;position: relative;background-color:rgb(21, 96, 123)!important;color:white!important;border: 1px solid rgb(21, 96, 123)!important;"
     type="button" class="order-wizard-paymentmethod-selector-module-button selected" data-toggle="modal"
     data-target="#fileModal">Attach File</button><span
+
     style="margin:10px;font-size:20px;color:rgb(21, 96, 123);height: 33px;left: 313px;top: -46px;position: relative;"
+
     id="nameFile"></span>
 
 <div class="modal fade" id="fileModal" tabindex="-1" role="dialog" aria-labelledby="mdalLabel" aria-hidden="true">
